@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { SearchInput } from '@mts241alikhlash/ui'
 import { computed } from 'vue'
 import { Button } from '@mts241alikhlash/ui/button'
-import { Input } from '@mts241alikhlash/ui/input'
 import { Checkbox } from '@mts241alikhlash/ui/checkbox'
 import {
   Card,
@@ -9,7 +9,7 @@ import {
   CardTitle,
   CardContent,
 } from '@mts241alikhlash/ui/card'
-import { ChevronDown, ChevronUp, Search, X } from '@lucide/vue'
+import { ChevronDown, ChevronUp } from '@lucide/vue'
 import type { Permission } from '../types'
 import {
   usePermissionMatrix,
@@ -76,22 +76,11 @@ const {
       </div>
     </CardHeader>
     <CardContent class="px-6 pt-4 pb-6 space-y-4">
-      <div class="relative">
-        <Search class="absolute left-3 top-2.5 size-4 text-muted-foreground" />
-        <Input
-          v-model="searchQuery"
-          placeholder="Cari modul atau hak akses..."
-          class="pl-9"
-        />
-        <button
-          v-if="searchQuery"
-          type="button"
-          class="absolute right-3 top-2.5 text-muted-foreground hover:text-foreground"
-          @click="searchQuery = ''"
-        >
-          <X class="size-4" />
-        </button>
-      </div>
+      <SearchInput
+        v-model="searchQuery"
+        label="Cari modul atau hak akses"
+        class="sm:w-full"
+      />
 
       <div
         v-if="loading"
