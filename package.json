@@ -1,7 +1,7 @@
 {
   "name": "admin-web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "241 Console: platform administration (users, roles, permissions, audit, files)",
   "type": "module",
   "scripts": {
