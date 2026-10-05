@@ -27,7 +27,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@mts241alikhlash/ui/form'
-import { AlertCircle } from 'lucide-vue-next'
+import { AlertCircle } from '@lucide/vue'
 
 const props = defineProps<{
   open: boolean

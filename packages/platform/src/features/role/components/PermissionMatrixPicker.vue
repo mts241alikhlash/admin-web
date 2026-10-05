@@ -9,7 +9,7 @@ import {
   CardTitle,
   CardContent,
 } from '@mts241alikhlash/ui/card'
-import { ChevronDown, ChevronUp, Search, X } from 'lucide-vue-next'
+import { ChevronDown, ChevronUp, Search, X } from '@lucide/vue'
 import type { Permission } from '../types'
 import {
   usePermissionMatrix,

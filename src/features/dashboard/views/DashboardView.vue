@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useQuery } from '@tanstack/vue-query'
-import { KeyRound, ScrollText, Shield, Users } from 'lucide-vue-next'
+import { KeyRound, ScrollText, Shield, Users } from '@lucide/vue'
 import StatCard from '../components/StatCard.vue'
 import { dashboardApi } from '../api/dashboardApi'
 

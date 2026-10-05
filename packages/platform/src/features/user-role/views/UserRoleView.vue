@@ -13,7 +13,7 @@ import {
 import { getColumns } from '../components/columns'
 import { useUserRole } from '../composables/useUserRole'
 import { userRoleApi } from '../api/userRoleApi'
-import { Search } from 'lucide-vue-next'
+import { Search } from '@lucide/vue'
 import { watchDebounced } from '@vueuse/core'
 
 import { toast } from 'vue-sonner'

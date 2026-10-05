@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@mts241alikhlash/ui/dialog'
-import { ExternalLink, MapPin, Navigation } from 'lucide-vue-next'
+import { ExternalLink, MapPin, Navigation } from '@lucide/vue'
 
 const props = defineProps<{
   open: boolean

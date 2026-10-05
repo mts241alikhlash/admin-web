@@ -5,7 +5,7 @@ import SchoolUnitDetailCard from '../components/SchoolUnitDetailCard.vue'
 import { useSchoolUnit } from '../composables/useSchoolUnit'
 import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
 import { Button } from '@mts241alikhlash/ui/button'
-import { PencilLine } from 'lucide-vue-next'
+import { PencilLine } from '@lucide/vue'
 import { useRoleGuard } from '@/features/platform/auth'
 
 const router = useRouter()

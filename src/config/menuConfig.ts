@@ -8,7 +8,7 @@ import {
   ScrollText,
   Shield,
   Users,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 export type {
   SubMenuItem,
