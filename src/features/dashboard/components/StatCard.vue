@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@mts241alikhlash/ui/card'
 import { Skeleton } from '@mts241alikhlash/ui/skeleton'
-import { RotateCw, TriangleAlert } from 'lucide-vue-next'
+import { RotateCw, TriangleAlert } from '@lucide/vue'
 import { Button } from '@mts241alikhlash/ui/button'
 import type { Component } from 'vue'
 

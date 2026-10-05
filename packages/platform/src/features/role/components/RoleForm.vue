@@ -28,7 +28,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@mts241alikhlash/ui/form'
-import { AlertCircle, Info } from 'lucide-vue-next'
+import { AlertCircle, Info } from '@lucide/vue'
 import PermissionMatrixPicker from './PermissionMatrixPicker.vue'
 import type {
   Role,

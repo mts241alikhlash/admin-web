@@ -17,7 +17,7 @@ import {
   FileCode,
   RefreshCw,
   Download,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 import { toast } from 'vue-sonner'
 
 const {

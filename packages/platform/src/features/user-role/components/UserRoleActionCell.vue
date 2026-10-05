@@ -23,7 +23,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@mts241alikhlash/ui/tooltip'
-import { Pencil, ShieldCheck, Settings2 } from 'lucide-vue-next'
+import { Pencil, ShieldCheck, Settings2 } from '@lucide/vue'
 import { useUserRole } from '../composables/useUserRole'
 import { useAuthSession } from '@/features/platform/auth'
 import { useRoleGuard } from '@/features/platform/auth'

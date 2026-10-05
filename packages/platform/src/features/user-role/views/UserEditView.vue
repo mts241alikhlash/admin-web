@@ -20,7 +20,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@mts241alikhlash/ui/form'
-import { ChevronLeft, Loader2 } from 'lucide-vue-next'
+import { ChevronLeft, Loader2 } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { userRoleApi } from '../api/userRoleApi'
 import type { UpdateUserAccountPayload } from '../types'

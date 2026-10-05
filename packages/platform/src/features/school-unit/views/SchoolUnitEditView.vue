@@ -9,7 +9,7 @@ import {
   StepperSeparator,
   StepperTrigger,
 } from '@mts241alikhlash/ui/stepper'
-import { Check } from 'lucide-vue-next'
+import { Check } from '@lucide/vue'
 import SchoolUnitAddressForm from '../components/SchoolUnitAddressForm.vue'
 import SchoolUnitInfoForm from '../components/SchoolUnitInfoForm.vue'
 import { useSchoolUnit } from '../composables/useSchoolUnit'
