@@ -43,7 +43,7 @@ const {
 
 <template>
   <Card
-    class="rounded-2xl border border-border/80 shadow-sm shadow-black/5 flex flex-col gap-0"
+    class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 flex flex-col gap-0"
   >
     <CardHeader
       class="border-b px-6 py-4 lg:py-0 lg:h-[72px] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0"
@@ -140,7 +140,7 @@ const {
                 moduleName
               }}</span>
               <span
-                class="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold whitespace-nowrap shrink-0"
+                class="text-[10px] px-2 py-0.5 rounded-md bg-primary/10 text-primary font-bold whitespace-nowrap shrink-0"
               >
                 {{
                   modulePerms.filter((p) => permissionIds?.includes(p.id))

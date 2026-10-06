@@ -144,7 +144,7 @@ const handleSave = async () => {
     </Tooltip>
 
     <Dialog v-model:open="open">
-      <DialogContent class="sm:max-w-md rounded-2xl">
+      <DialogContent class="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Kelola Role Pengguna</DialogTitle>
           <DialogDescription>
