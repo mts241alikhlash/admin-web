@@ -154,7 +154,7 @@ const columns: ColumnDef<AuditLog>[] = [
         Badge,
         {
           variant: 'secondary',
-          class: 'font-mono text-[10px] px-2 py-0.5 rounded border',
+          class: 'font-mono text-[10px] px-2 py-0.5 rounded-md border',
         },
         () => row.getValue<string>('resource'),
       ),

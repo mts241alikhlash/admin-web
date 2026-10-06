@@ -176,7 +176,7 @@ const formatBytes = (bytes: number, decimals = 2) => {
       </Card>
 
       <Card
-        class="md:col-span-2 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/4"
+        class="md:col-span-2 overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
       >
         <CardHeader class="border-b px-6 py-5">
           <CardTitle class="text-lg font-bold"

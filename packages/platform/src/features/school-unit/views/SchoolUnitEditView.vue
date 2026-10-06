@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BackButton } from '@mts241alikhlash/ui'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
@@ -67,8 +68,12 @@ const handleSaveAddress = async () => {
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 py-0"
     >
       <CardHeader
-        class="flex flex-row items-center justify-between border-b px-6 pt-5! pb-5!"
+        class="flex flex-row items-center gap-3 border-b px-6 pt-5! pb-5!"
       >
+        <BackButton
+          label="Kembali ke profil sekolah"
+          @click="router.push('/school-unit')"
+        />
         <CardTitle class="text-2xl font-bold tracking-tight">
           Ubah Profil Sekolah
         </CardTitle>

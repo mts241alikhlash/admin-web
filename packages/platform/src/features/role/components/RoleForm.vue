@@ -140,7 +140,7 @@ function confirmSave() {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="lg:col-span-1">
           <Card
-            class="rounded-2xl border border-border/80 shadow-sm shadow-black/5 flex flex-col gap-0"
+            class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 flex flex-col gap-0"
           >
             <CardHeader
               class="border-b px-6 py-4 lg:py-0 lg:h-[72px] flex flex-row items-center shrink-0"
@@ -289,7 +289,7 @@ function confirmSave() {
   </form>
 
   <AlertDialog v-model:open="showConfirmAlert">
-    <AlertDialogContent class="rounded-2xl">
+    <AlertDialogContent>
       <AlertDialogHeader>
         <AlertDialogTitle>Simpan Perubahan?</AlertDialogTitle>
         <AlertDialogDescription>

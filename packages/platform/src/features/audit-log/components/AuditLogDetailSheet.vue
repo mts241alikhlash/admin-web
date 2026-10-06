@@ -140,7 +140,7 @@ const copyToClipboard = () => {
                   <FileJson class="size-3.5" /> Modul / Entitas
                 </span>
                 <span
-                  class="col-span-2 font-mono text-xs font-semibold bg-muted px-2 py-0.5 rounded w-fit border"
+                  class="col-span-2 font-mono text-xs font-semibold bg-muted px-2 py-0.5 rounded-md w-fit border"
                 >
                   {{ log.resource }}
                 </span>

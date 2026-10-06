@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { useBreadcrumbs } from '@mts241alikhlash/web-shared/composables/useBreadcrumbs'
+import { BackButton } from '@mts241alikhlash/ui'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { toast } from 'vue-sonner'
 import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
-import { Button } from '@mts241alikhlash/ui/button'
 import { Alert, AlertDescription } from '@mts241alikhlash/ui/alert'
-import { ArrowLeft } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { rolesApi } from '../api/rolesApi'
 import RoleForm from '../components/RoleForm.vue'
@@ -110,6 +110,13 @@ onMounted(async () => {
     await fetchRoleDetails()
   }
 })
+
+useBreadcrumbs(() => {
+  const name = selectedRole.value?.name
+  if (!name) return null
+  const trail = route.meta.breadcrumbs ?? []
+  return [...trail.slice(0, -1), { title: name }]
+})
 </script>
 
 <template>
@@ -121,14 +128,10 @@ onMounted(async () => {
         class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b px-6 py-5 shrink-0 gap-4"
       >
         <div class="flex items-center gap-3">
-          <Button
-            variant="outline"
-            size="icon"
-            class="h-8 w-8"
+          <BackButton
+            label="Kembali ke daftar role"
             @click="handleCancel"
-          >
-            <ArrowLeft class="h-4 w-4" />
-          </Button>
+          />
           <div>
             <CardTitle class="text-2xl font-bold tracking-tight">
               {{ isEditing ? 'Ubah Hak Akses Role' : 'Tambah Role Baru' }}

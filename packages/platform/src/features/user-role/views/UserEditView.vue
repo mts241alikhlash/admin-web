@@ -1,4 +1,6 @@
 ﻿<script setup lang="ts">
+import { useBreadcrumbs } from '@mts241alikhlash/web-shared/composables/useBreadcrumbs'
+import { BackButton } from '@mts241alikhlash/ui'
 import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { toTypedSchema } from '@vee-validate/zod'
@@ -20,7 +22,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@mts241alikhlash/ui/form'
-import { ChevronLeft, Loader2 } from '@lucide/vue'
+import { Loader2 } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { userRoleApi } from '../api/userRoleApi'
 import type { UpdateUserAccountPayload } from '../types'
@@ -116,6 +118,13 @@ const onSubmit = handleSubmit(async (values) => {
     isSaving.value = false
   }
 })
+
+useBreadcrumbs(() => {
+  const name = currentIdentifier.value
+  if (!name) return null
+  const trail = route.meta.breadcrumbs ?? []
+  return [...trail.slice(0, -1), { title: name }]
+})
 </script>
 
 <template>
@@ -124,13 +133,10 @@ const onSubmit = handleSubmit(async (values) => {
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
       <CardHeader class="flex flex-row items-center gap-4 border-b px-6 py-5">
-        <Button
-          variant="outline"
-          size="icon"
+        <BackButton
+          label="Kembali ke daftar pengguna"
           @click="goBack"
-        >
-          <ChevronLeft class="h-4 w-4" />
-        </Button>
+        />
         <div>
           <CardTitle class="text-2xl font-bold tracking-tight">
             Ubah Akun Pengguna
