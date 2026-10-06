@@ -1,5 +1,15 @@
 # admin-web
 
+## 1.3.0
+
+### Minor Changes
+
+- 728c737: Sub-pages go back with `BackButton` from `@mts241alikhlash/ui` 1.3.1, left of the card title and labelled with where it leads, and breadcrumbs name the record a page is about instead of "Detail" or "Ubah"; long crumbs truncate. Another user's profile gets a back button and their name in the breadcrumb. The profile and address tabs use floating labels with every field tied to its label, including the birth date picker. Role, user-account and school-profile forms use the same back button, and role and account forms name what they edit.
+
+### Patch Changes
+
+- 728c737: Badges take `rounded-md` from `@mts241alikhlash/ui` 1.2.1. Audit log code labels and the permission counter use the badge radius; the role form cards and the files card use the standard page-card ring and shadow; the role confirm and user-role dialogs use the default dialog radius.
+
 ## 1.2.0
 
 ### Minor Changes
