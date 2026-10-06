@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
-import { DataTable } from '@mts241alikhlash/ui'
+import { DataTable, SearchInput } from '@mts241alikhlash/ui'
 import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
-import { Input } from '@mts241alikhlash/ui/input'
 import {
   Select,
   SelectContent,
@@ -13,7 +12,6 @@ import {
 import { getColumns } from '../components/columns'
 import { useUserRole } from '../composables/useUserRole'
 import { userRoleApi } from '../api/userRoleApi'
-import { Search } from '@lucide/vue'
 import { watchDebounced } from '@vueuse/core'
 
 import { toast } from 'vue-sonner'
@@ -146,16 +144,10 @@ const handleRoleFilterChange = (val: string) => {
           @update:page-size="handlePageSizeChange"
         >
           <template #header-right>
-            <div class="relative w-full sm:w-48 max-w-[200px]">
-              <Search
-                class="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-muted-foreground"
-              />
-              <Input
-                v-model="searchKeyword"
-                placeholder="Cari pengguna..."
-                class="h-8 pl-8 w-full text-xs"
-              />
-            </div>
+            <SearchInput
+              v-model="searchKeyword"
+              label="Cari pengguna"
+            />
           </template>
         </DataTable>
       </div>

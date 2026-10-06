@@ -2,12 +2,12 @@
 import { h, onMounted, ref, watch } from 'vue'
 import { watchDebounced } from '@vueuse/core'
 import { toast } from 'vue-sonner'
-import { DataTable } from '@mts241alikhlash/ui'
+import { DataTable, SearchInput } from '@mts241alikhlash/ui'
 import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
 import { Input } from '@mts241alikhlash/ui/input'
 import { Button } from '@mts241alikhlash/ui/button'
 import { Badge } from '@mts241alikhlash/ui/badge'
-import { Search, RotateCcw } from '@lucide/vue'
+import { RotateCcw } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { auditLogsApi } from '../api/auditLogsApi'
 import type { AuditLog } from '../types'
@@ -215,16 +215,11 @@ onMounted(() => {
               <span class="text-xs font-semibold text-muted-foreground"
                 >Kata Kunci Pencarian</span
               >
-              <div class="relative">
-                <Search
-                  class="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
-                />
-                <Input
-                  v-model="filters.search"
-                  placeholder="Cari kata kunci, IP, agent..."
-                  class="pl-9 h-9 text-sm"
-                />
-              </div>
+              <SearchInput
+                v-model="filters.search"
+                label="Cari kata kunci, IP, agent"
+                class="sm:w-full"
+              />
             </div>
             <div class="space-y-1.5">
               <span class="text-xs font-semibold text-muted-foreground"
