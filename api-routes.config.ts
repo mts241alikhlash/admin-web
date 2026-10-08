@@ -13,6 +13,7 @@ export const SERVICE_PREFIXES = {
     '/school-unit-types',
     '/religions',
     '/blood-types',
+    '/regions',
   ],
 
   portal: [
