@@ -1,5 +1,11 @@
 # admin-web
 
+## 1.4.2
+
+### Patch Changes
+
+- 2f6bf9e: Card, judul, dan isi memakai standar `@mts241alikhlash/ui` 1.8; field form peran, izin, unit sekolah, dan akun memakai `FloatingField`.
+
 ## 1.4.1
 
 ### Patch Changes
