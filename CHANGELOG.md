@@ -1,5 +1,11 @@
 # admin-web
 
+## 1.4.3
+
+### Patch Changes
+
+- 8434475: Ejaan Amerika di kode, komentar, dan nama test (`honours` menjadi `honors`, `enrolment` menjadi `enrollment`, dan sejenisnya).
+
 ## 1.4.2
 
 ### Patch Changes
