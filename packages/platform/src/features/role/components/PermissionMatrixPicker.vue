@@ -43,18 +43,17 @@ const {
 
 <template>
   <Card
-    class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 flex flex-col gap-0"
+    gap="none"
+    class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
   >
-    <CardHeader
-      class="border-b px-6 py-4 lg:py-0 lg:h-[72px] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0"
-    >
+    <CardHeader standard>
       <div class="flex items-center min-w-0">
-        <CardTitle class="text-lg font-bold"
+        <CardTitle size="md"
           >Hak Akses - {{ permissionIds?.length ?? 0 }} Terpilih</CardTitle
         >
       </div>
 
-      <div class="flex items-center gap-2 justify-end w-full sm:w-auto">
+      <div class="flex items-center gap-2 justify-end">
         <Button
           type="button"
           variant="outline"
@@ -75,7 +74,10 @@ const {
         </Button>
       </div>
     </CardHeader>
-    <CardContent class="px-6 pt-4 pb-6 space-y-4">
+    <CardContent
+      variant="standard"
+      class="space-y-4"
+    >
       <SearchInput
         v-model="searchQuery"
         label="Cari modul atau hak akses"

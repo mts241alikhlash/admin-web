@@ -122,18 +122,17 @@ useBreadcrumbs(() => {
 <template>
   <div class="p-4 md:p-6 lg:p-8">
     <Card
-      class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 flex flex-col gap-0"
+      gap="none"
+      class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b px-6 py-5 shrink-0 gap-4"
-      >
+      <CardHeader standard>
         <div class="flex items-center gap-3">
           <BackButton
             label="Kembali ke daftar role"
             @click="handleCancel"
           />
           <div>
-            <CardTitle class="text-2xl font-bold tracking-tight">
+            <CardTitle size="lg">
               {{ isEditing ? 'Ubah Hak Akses Role' : 'Tambah Role Baru' }}
             </CardTitle>
           </div>

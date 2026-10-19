@@ -20,13 +20,7 @@ import {
 } from '@mts241alikhlash/ui/dialog'
 import { Input } from '@mts241alikhlash/ui/input'
 import { Textarea } from '@mts241alikhlash/ui/textarea'
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@mts241alikhlash/ui/form'
+import { FormControl, FloatingField } from '@mts241alikhlash/ui/form'
 import { AlertCircle } from '@lucide/vue'
 
 const props = defineProps<{
@@ -118,65 +112,57 @@ const onSubmit = handleSubmit((formValues) => {
         class="flex-1 space-y-5 overflow-y-auto px-6 py-5"
         @submit.prevent="onSubmit"
       >
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="module"
+          label="Modul"
+          required
         >
-          <FormItem>
-            <FormLabel>
-              Modul <span class="text-destructive">*</span>
-            </FormLabel>
+          <div class="content-start">
             <FormControl>
               <Input
-                placeholder="Contoh: inventory"
                 v-bind="componentField"
                 :disabled="isEditing"
               />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="action"
+          label="Aksi"
+          required
         >
-          <FormItem>
-            <FormLabel>
-              Aksi <span class="text-destructive">*</span>
-            </FormLabel>
+          <div class="content-start">
             <FormControl>
               <Input
-                placeholder="Contoh: export"
                 v-bind="componentField"
                 :disabled="isEditing"
               />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
         <div class="rounded-lg border bg-muted/30 px-4 py-3">
           <p class="text-xs text-muted-foreground">Kode permission</p>
           <p class="font-mono text-sm font-semibold">{{ codePreview }}</p>
         </div>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="description"
+          label="Deskripsi"
         >
-          <FormItem>
-            <FormLabel>Deskripsi</FormLabel>
+          <div class="content-start">
             <FormControl>
               <Textarea
-                placeholder="Jelaskan kegunaan permission ini..."
                 rows="3"
                 v-bind="componentField"
               />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
         <Alert
           v-if="formError"

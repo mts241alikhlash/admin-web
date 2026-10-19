@@ -3,7 +3,12 @@ import { onMounted, ref } from 'vue'
 import { toast } from 'vue-sonner'
 import { DataTable } from '@mts241alikhlash/ui'
 import { Button } from '@mts241alikhlash/ui/button'
-import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@mts241alikhlash/ui/card'
 import { RefreshCw } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { permissionsApi } from '../api/permissionsApi'
@@ -53,20 +58,16 @@ onMounted(() => {
 <template>
   <div class="p-4 md:p-6 lg:p-8">
     <Card
+      gap="none"
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b px-6 py-5 gap-4"
-      >
+      <CardHeader standard>
         <div>
-          <CardTitle class="text-2xl font-bold tracking-tight">
-            Manajemen Permission
-          </CardTitle>
+          <CardTitle size="lg"> Manajemen Permission </CardTitle>
         </div>
-        <div class="flex flex-col sm:flex-row w-full sm:w-auto gap-2">
+        <div class="flex gap-2">
           <Button
             variant="outline"
-            class="w-full sm:w-auto"
             :disabled="isSyncing"
             @click="handleSync"
           >
@@ -79,14 +80,14 @@ onMounted(() => {
         </div>
       </CardHeader>
 
-      <div class="p-6">
+      <CardContent variant="standard">
         <DataTable
           :columns="columns"
           :data="permissions"
           :is-loading="isLoading"
           item-label="permission"
         />
-      </div>
+      </CardContent>
     </Card>
   </div>
 </template>

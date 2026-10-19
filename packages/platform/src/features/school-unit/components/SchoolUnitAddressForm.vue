@@ -7,13 +7,7 @@ import type { SchoolUnitAddress } from '../types'
 import { Button } from '@mts241alikhlash/ui/button'
 import { Input } from '@mts241alikhlash/ui/input'
 import { Textarea } from '@mts241alikhlash/ui/textarea'
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@mts241alikhlash/ui/form'
+import { FormControl, FloatingField } from '@mts241alikhlash/ui/form'
 
 const props = defineProps<{
   draftAddress: SchoolUnitAddress
@@ -111,201 +105,152 @@ const onSave = form.handleSubmit((values) => {
   <div>
     <div class="px-6 pt-3 pb-6">
       <div class="grid gap-4 md:grid-cols-2">
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="street"
+          label="Alamat"
+          required
         >
-          <FormItem class="content-start md:col-span-2">
-            <FormLabel
-              >Alamat <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start md:col-span-2">
             <FormControl>
-              <Textarea
-                placeholder="Masukkan alamat jalan/kampung/komplek"
-                v-bind="componentField"
-              />
+              <Textarea v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="rt"
+          label="RT"
         >
-          <FormItem class="content-start">
-            <FormLabel>RT</FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="001"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="rw"
+          label="RW"
         >
-          <FormItem class="content-start">
-            <FormLabel>RW</FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="002"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="village"
+          label="Kelurahan / Desa"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Kelurahan / Desa
-              <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan kelurahan atau desa"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="district"
+          label="Kecamatan"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Kecamatan <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan kecamatan"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="city"
+          label="Kota / Kabupaten"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Kota / Kabupaten
-              <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan kota atau kabupaten"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="province"
+          label="Provinsi"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Provinsi <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan provinsi"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="country"
+          label="Negara"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Negara <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan negara"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="postalCode"
+          label="Kode Pos"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Kode Pos <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan kode pos"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="latitude"
+          label="Latitude"
         >
-          <FormItem class="content-start">
-            <FormLabel>Latitude</FormLabel>
+          <div class="content-start">
             <FormControl>
               <Input
                 type="text"
                 inputmode="decimal"
-                placeholder="-6.914744"
                 v-bind="componentField"
               />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="longitude"
+          label="Longitude"
         >
-          <FormItem class="content-start">
-            <FormLabel>Longitude</FormLabel>
+          <div class="content-start">
             <FormControl>
               <Input
                 type="text"
                 inputmode="decimal"
-                placeholder="107.609810"
                 v-bind="componentField"
               />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
       </div>
 
       <p

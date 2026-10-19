@@ -3,7 +3,12 @@ import { h, onMounted, ref, watch } from 'vue'
 import { watchDebounced } from '@vueuse/core'
 import { toast } from 'vue-sonner'
 import { DataTable, SearchInput } from '@mts241alikhlash/ui'
-import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@mts241alikhlash/ui/card'
 import { Input } from '@mts241alikhlash/ui/input'
 import { Button } from '@mts241alikhlash/ui/button'
 import { Badge } from '@mts241alikhlash/ui/badge'
@@ -196,19 +201,16 @@ onMounted(() => {
 <template>
   <div class="p-4 md:p-6 lg:p-8">
     <Card
+      gap="none"
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b px-6 py-5 gap-4"
-      >
+      <CardHeader standard>
         <div>
-          <CardTitle class="text-2xl font-bold tracking-tight">
-            Log Aktivitas Sistem
-          </CardTitle>
+          <CardTitle size="lg"> Log Aktivitas Sistem </CardTitle>
         </div>
       </CardHeader>
 
-      <div class="p-6">
+      <CardContent variant="standard">
         <div class="flex flex-col md:flex-row gap-4 items-end mb-6">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 w-full">
             <div class="space-y-1.5">
@@ -260,7 +262,7 @@ onMounted(() => {
           item-label="log aktivitas"
           @update:page="handlePageChange"
         />
-      </div>
+      </CardContent>
     </Card>
 
     <AuditLogDetailSheet
