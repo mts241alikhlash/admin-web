@@ -28,15 +28,12 @@ onMounted(() => {
 <template>
   <div class="p-4 md:p-6 lg:p-8">
     <Card
-      class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 py-0"
+      gap="none"
+      class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader
-        class="flex flex-row items-center justify-between border-b px-6 pt-5! pb-5! gap-4"
-      >
+      <CardHeader standard>
         <div>
-          <CardTitle class="text-2xl font-bold tracking-tight">
-            Profil Sekolah
-          </CardTitle>
+          <CardTitle size="lg"> Profil Sekolah </CardTitle>
         </div>
         <Button
           v-if="can('school-units.create')"

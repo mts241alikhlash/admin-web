@@ -15,13 +15,7 @@ import {
 } from '@mts241alikhlash/ui/card'
 import { Button } from '@mts241alikhlash/ui/button'
 import { Input } from '@mts241alikhlash/ui/input'
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@mts241alikhlash/ui/form'
+import { FormControl, FloatingField } from '@mts241alikhlash/ui/form'
 import { Loader2 } from '@lucide/vue'
 import { getIndonesianErrorMessage } from '@mts241alikhlash/web-shared/utils/error-handler'
 import { userRoleApi } from '../api/userRoleApi'
@@ -130,21 +124,22 @@ useBreadcrumbs(() => {
 <template>
   <div class="p-4 md:p-6 lg:p-8 w-full">
     <Card
+      gap="none"
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader class="flex flex-row items-center gap-4 border-b px-6 py-5">
-        <BackButton
-          label="Kembali ke daftar pengguna"
-          @click="goBack"
-        />
-        <div>
-          <CardTitle class="text-2xl font-bold tracking-tight">
-            Ubah Akun Pengguna
-          </CardTitle>
+      <CardHeader standard>
+        <div class="flex items-center gap-3">
+          <BackButton
+            label="Kembali ke daftar pengguna"
+            @click="goBack"
+          />
+          <div>
+            <CardTitle size="lg"> Ubah Akun Pengguna </CardTitle>
+          </div>
         </div>
       </CardHeader>
 
-      <CardContent class="p-6">
+      <CardContent variant="standard">
         <div
           v-if="isLoading"
           class="flex items-center justify-center py-12"
@@ -162,61 +157,54 @@ useBreadcrumbs(() => {
           >
             <h3 class="text-sm font-semibold">Kredensial Akun</h3>
 
-            <FormField
+            <FloatingField
               v-slot="{ componentField }"
               name="identifier"
+              label="Username"
+              required
             >
-              <FormItem>
-                <FormLabel
-                  >Username <span class="text-destructive">*</span></FormLabel
-                >
+              <div class="content-start">
                 <FormControl>
                   <Input
                     v-bind="componentField"
-                    placeholder="Masukkan username"
                     :disabled="isSaving"
                   />
                 </FormControl>
-                <FormMessage />
-              </FormItem>
-            </FormField>
+              </div>
+            </FloatingField>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
-              <FormField
+              <FloatingField
                 v-slot="{ componentField }"
                 name="password"
+                label="Password Baru"
               >
-                <FormItem>
-                  <FormLabel>Password Baru</FormLabel>
+                <div class="content-start">
                   <FormControl>
                     <Input
                       type="password"
                       v-bind="componentField"
-                      placeholder="Kosongkan jika tidak diubah"
                       :disabled="isSaving"
                     />
                   </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
+                </div>
+              </FloatingField>
 
-              <FormField
+              <FloatingField
                 v-slot="{ componentField }"
                 name="confirmPassword"
+                label="Konfirmasi Password Baru"
               >
-                <FormItem>
-                  <FormLabel>Konfirmasi Password Baru</FormLabel>
+                <div class="content-start">
                   <FormControl>
                     <Input
                       type="password"
                       v-bind="componentField"
-                      placeholder="Ulangi password baru"
                       :disabled="isSaving"
                     />
                   </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
+                </div>
+              </FloatingField>
             </div>
           </div>
 

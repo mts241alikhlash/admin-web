@@ -3,7 +3,7 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
+  CardDescription,
 } from '@mts241alikhlash/ui/card'
 import { Skeleton } from '@mts241alikhlash/ui/skeleton'
 import { RotateCw, TriangleAlert } from '@lucide/vue'
@@ -24,9 +24,9 @@ defineProps<{
 <template>
   <Card>
     <CardHeader class="flex flex-row items-center justify-between pb-2">
-      <CardTitle class="text-sm font-medium text-muted-foreground">
+      <CardDescription class="font-medium">
         {{ title }}
-      </CardTitle>
+      </CardDescription>
       <component
         :is="icon"
         class="size-4 text-muted-foreground"

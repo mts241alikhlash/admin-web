@@ -21,13 +21,7 @@ import {
   CardTitle,
   CardContent,
 } from '@mts241alikhlash/ui/card'
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@mts241alikhlash/ui/form'
+import { FormControl, FloatingField } from '@mts241alikhlash/ui/form'
 import { AlertCircle, Info } from '@lucide/vue'
 import PermissionMatrixPicker from './PermissionMatrixPicker.vue'
 import type {
@@ -140,43 +134,38 @@ function confirmSave() {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="lg:col-span-1">
           <Card
-            class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4 flex flex-col gap-0"
+            gap="none"
+            class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
           >
-            <CardHeader
-              class="border-b px-6 py-4 lg:py-0 lg:h-[72px] flex flex-row items-center shrink-0"
-            >
-              <CardTitle class="text-lg font-bold">Detail Role</CardTitle>
+            <CardHeader standard>
+              <CardTitle size="md">Detail Role</CardTitle>
             </CardHeader>
-            <CardContent class="px-6 pt-4 pb-6 space-y-4">
-              <FormField
+            <CardContent
+              variant="standard"
+              class="space-y-4"
+            >
+              <FloatingField
                 v-slot="{ componentField }"
                 name="name"
+                label="Nama Role"
+                required
               >
-                <FormItem>
-                  <FormLabel class="font-semibold">
-                    Nama Role <span class="text-destructive">*</span>
-                  </FormLabel>
+                <div class="content-start">
                   <FormControl>
-                    <Input
-                      placeholder="Masukkan nama role"
-                      v-bind="componentField"
-                    />
+                    <Input v-bind="componentField" />
                   </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
+                </div>
+              </FloatingField>
 
-              <FormField
+              <FloatingField
                 v-slot="{ componentField }"
                 name="code"
+                label="Kode Role"
+                required
               >
-                <FormItem>
-                  <FormLabel class="font-semibold">
-                    Kode Role <span class="text-destructive">*</span>
-                  </FormLabel>
+                <div class="content-start">
                   <FormControl>
                     <Input
-                      placeholder="Masukkan kode role"
                       v-bind="componentField"
                       :disabled="isEditing"
                       @input="
@@ -197,26 +186,23 @@ function confirmSave() {
                       Kode role tidak dapat diubah setelah dibuat.
                     </span>
                   </p>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
+                </div>
+              </FloatingField>
 
-              <FormField
+              <FloatingField
                 v-slot="{ componentField }"
                 name="description"
+                label="Deskripsi"
               >
-                <FormItem>
-                  <FormLabel class="font-semibold">Deskripsi</FormLabel>
+                <div class="content-start">
                   <FormControl>
                     <Textarea
-                      placeholder="Masukkan deskripsi"
                       rows="3"
                       v-bind="componentField"
                     />
                   </FormControl>
-                  <FormMessage />
-                </FormItem>
-              </FormField>
+                </div>
+              </FloatingField>
 
               <div
                 v-if="isSystemRole"

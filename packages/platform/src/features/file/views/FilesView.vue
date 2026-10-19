@@ -176,14 +176,13 @@ const formatBytes = (bytes: number, decimals = 2) => {
       </Card>
 
       <Card
+        gap="none"
         class="md:col-span-2 overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
       >
-        <CardHeader class="border-b px-6 py-5">
-          <CardTitle class="text-lg font-bold"
-            >Semua Berkas Terunggah</CardTitle
-          >
+        <CardHeader standard>
+          <CardTitle size="md">Semua Berkas Terunggah</CardTitle>
         </CardHeader>
-        <CardContent class="p-6">
+        <CardContent variant="standard">
           <div
             v-if="isLoading && files.length === 0"
             class="text-center py-12 text-muted-foreground text-sm"
@@ -214,7 +213,7 @@ const formatBytes = (bytes: number, decimals = 2) => {
                 </div>
                 <div class="min-w-0">
                   <span
-                    class="block font-medium text-sm truncate"
+                    class="block font-medium text-sm break-words"
                     :title="file.originalName"
                   >
                     {{ file.originalName }}

@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from 'vue'
 import { DataTable, SearchInput } from '@mts241alikhlash/ui'
-import { Card, CardHeader, CardTitle } from '@mts241alikhlash/ui/card'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@mts241alikhlash/ui/card'
 import {
   Select,
   SelectContent,
@@ -70,19 +75,19 @@ const handleRoleFilterChange = (val: string) => {
 <template>
   <div class="p-4 md:p-6 lg:p-8">
     <Card
+      gap="none"
       class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
     >
-      <CardHeader
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b px-6 py-5 gap-4"
-      >
+      <CardHeader standard>
         <div>
-          <CardTitle class="text-2xl font-bold tracking-tight">
-            Kelola Pengguna
-          </CardTitle>
+          <CardTitle size="lg"> Kelola Pengguna </CardTitle>
         </div>
       </CardHeader>
 
-      <div class="p-6 space-y-6">
+      <CardContent
+        variant="standard"
+        class="space-y-6"
+      >
         <div class="flex flex-col gap-4">
           <div class="hidden lg:flex lg:flex-row lg:items-center gap-3">
             <Select
@@ -150,7 +155,7 @@ const handleRoleFilterChange = (val: string) => {
             />
           </template>
         </DataTable>
-      </div>
+      </CardContent>
     </Card>
   </div>
 </template>

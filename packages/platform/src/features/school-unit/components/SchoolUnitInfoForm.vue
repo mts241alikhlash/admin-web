@@ -8,13 +8,7 @@ import { schoolUnitTypeApi } from '@/features/platform/school-unit-type'
 import type { SchoolUnitProfile } from '../types'
 import { Button } from '@mts241alikhlash/ui/button'
 import { Input } from '@mts241alikhlash/ui/input'
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@mts241alikhlash/ui/form'
+import { FormControl, FloatingField } from '@mts241alikhlash/ui/form'
 import {
   Select,
   SelectContent,
@@ -117,83 +111,69 @@ const onSave = form.handleSubmit((values) => {
   <div>
     <div class="px-6 pt-3 pb-6">
       <div class="grid gap-4 md:grid-cols-2">
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="name"
+          label="Nama Lembaga"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Nama Lembaga <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan nama Lembaga"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="surname"
+          label="Nama Singkat"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Nama Singkat <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan nama singkat"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="nsm"
+          label="NSM"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel>NSM <span class="text-destructive">*</span></FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan NSM"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="npsn"
+          label="NPSN"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel>NPSN <span class="text-destructive">*</span></FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan NPSN"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
-          v-slot="{ componentField }"
+        <FloatingField
+          v-slot="{ value, handleChange }"
           name="status"
+          label="Status"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Status <span class="text-destructive">*</span></FormLabel
+          <div class="content-start">
+            <Select
+              :model-value="value"
+              @update:model-value="handleChange"
             >
-            <Select v-bind="componentField">
               <FormControl>
                 <SelectTrigger class="w-full">
                   <SelectValue placeholder="Pilih status" />
@@ -209,19 +189,20 @@ const onSave = form.handleSubmit((values) => {
                 </SelectItem>
               </SelectContent>
             </Select>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
-          v-slot="{ componentField }"
+        <FloatingField
+          v-slot="{ value, handleChange }"
           name="typeId"
+          label="Tipe"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel>Tipe <span class="text-destructive">*</span></FormLabel>
+          <div class="content-start">
             <Select
-              v-bind="componentField"
+              :model-value="value"
               :disabled="Boolean(props.draftSchoolUnit.id)"
+              @update:model-value="handleChange"
             >
               <FormControl>
                 <SelectTrigger class="w-full">
@@ -238,77 +219,60 @@ const onSave = form.handleSubmit((values) => {
                 </SelectItem>
               </SelectContent>
             </Select>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="npwp"
+          label="NPWP"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel>NPWP <span class="text-destructive">*</span></FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan NPWP"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="phone"
+          label="Telepon"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Telepon <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan nomor telepon"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="email"
+          label="Email"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel>Email <span class="text-destructive">*</span></FormLabel>
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="Masukkan email"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
 
-        <FormField
+        <FloatingField
           v-slot="{ componentField }"
           name="website"
+          label="Website"
+          required
         >
-          <FormItem class="content-start">
-            <FormLabel
-              >Website <span class="text-destructive">*</span></FormLabel
-            >
+          <div class="content-start">
             <FormControl>
-              <Input
-                placeholder="https://contoh.sch.id"
-                v-bind="componentField"
-              />
+              <Input v-bind="componentField" />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
+          </div>
+        </FloatingField>
       </div>
 
       <p

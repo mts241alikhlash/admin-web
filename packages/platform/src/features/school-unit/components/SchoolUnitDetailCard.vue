@@ -92,17 +92,18 @@ const hasValidAddress = computed(() => {
       v-else
       class="space-y-6"
     >
-      <Card class="rounded-xl shadow-xs py-0 gap-0">
-        <CardHeader
-          class="flex flex-row items-center gap-2.5 border-b px-5 py-3.5 pb-3.5!"
-        >
-          <Building2 class="size-4 text-primary shrink-0" />
-          <CardTitle class="text-sm font-semibold tracking-normal">
-            Identitas, Legalitas &amp; Kontak
-          </CardTitle>
+      <Card
+        gap="none"
+        class="rounded-xl shadow-xs"
+      >
+        <CardHeader standard>
+          <div class="flex items-center gap-2.5">
+            <Building2 class="size-4 text-primary shrink-0" />
+            <CardTitle size="md"> Identitas, Legalitas &amp; Kontak </CardTitle>
+          </div>
         </CardHeader>
 
-        <CardContent class="px-5 pt-3.5 pb-5">
+        <CardContent variant="standard">
           <dl class="grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
             <div>
               <dt class="text-xs font-medium text-muted-foreground">
@@ -212,17 +213,18 @@ const hasValidAddress = computed(() => {
       </Card>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card class="rounded-xl shadow-xs py-0 gap-0">
-          <CardHeader
-            class="flex flex-row items-center gap-2.5 border-b px-5 py-3.5 pb-3.5!"
-          >
-            <MapPin class="size-4 text-primary shrink-0" />
-            <CardTitle class="text-sm font-semibold tracking-normal">
-              Alamat Lembaga
-            </CardTitle>
+        <Card
+          gap="none"
+          class="rounded-xl shadow-xs"
+        >
+          <CardHeader standard>
+            <div class="flex items-center gap-2.5">
+              <MapPin class="size-4 text-primary shrink-0" />
+              <CardTitle size="md"> Alamat Lembaga </CardTitle>
+            </div>
           </CardHeader>
 
-          <CardContent class="px-5 pt-3.5 pb-5">
+          <CardContent variant="standard">
             <dl
               v-if="hasValidAddress"
               class="grid grid-cols-2 gap-y-3.5 gap-x-6 text-sm"
@@ -306,17 +308,21 @@ const hasValidAddress = computed(() => {
           </CardContent>
         </Card>
 
-        <Card class="rounded-xl shadow-xs py-0 gap-0">
-          <CardHeader
-            class="flex flex-row items-center gap-2.5 border-b px-5 py-3.5 pb-3.5!"
-          >
-            <MapPinned class="size-4 text-primary shrink-0" />
-            <CardTitle class="text-sm font-semibold tracking-normal">
-              Titik Lokasi
-            </CardTitle>
+        <Card
+          gap="none"
+          class="rounded-xl shadow-xs"
+        >
+          <CardHeader standard>
+            <div class="flex items-center gap-2.5">
+              <MapPinned class="size-4 text-primary shrink-0" />
+              <CardTitle size="md"> Titik Lokasi </CardTitle>
+            </div>
           </CardHeader>
 
-          <CardContent class="px-5 pt-3.5 pb-5 space-y-4">
+          <CardContent
+            variant="standard"
+            class="space-y-4"
+          >
             <button
               v-if="hasPin"
               type="button"
