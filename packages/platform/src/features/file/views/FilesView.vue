@@ -118,7 +118,7 @@ const formatBytes = (bytes: number, decimals = 2) => {
 </script>
 
 <template>
-  <div class="p-4 md:p-6 lg:p-8 space-y-6">
+  <div class="space-y-6 p-4 sm:p-6">
     <div class="flex items-center justify-between">
       <div>
         <h1 class="text-3xl font-bold tracking-tight">Berkas & Dokumen</h1>
@@ -177,7 +177,7 @@ const formatBytes = (bytes: number, decimals = 2) => {
 
       <Card
         gap="none"
-        class="md:col-span-2 overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
+        class="md:col-span-2 overflow-hidden"
       >
         <CardHeader standard>
           <CardTitle size="md">Semua Berkas Terunggah</CardTitle>

@@ -15,6 +15,8 @@ configureAuth({
   appSubtitle: 'Administrasi Platform',
   logoAlt: 'Logo 241 Console',
   loginTitle: 'Masuk ke 241 Console',
+  loginSubtitle: 'Administrasi platform madrasah.',
+  identifierLabel: 'Nama pengguna',
   homeRoute: '/dashboard',
   ssoApp: 'admin',
 })

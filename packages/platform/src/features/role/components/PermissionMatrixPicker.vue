@@ -44,7 +44,7 @@ const {
 <template>
   <Card
     gap="none"
-    class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
+    class="overflow-hidden"
   >
     <CardHeader standard>
       <div class="flex items-center min-w-0">
