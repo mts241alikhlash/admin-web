@@ -12,6 +12,7 @@ import { rolesRoutes } from '@/features/platform/role'
 import { schoolUnitRoutes } from '@/features/platform/school-unit'
 import { schoolUnitTypeRoutes } from '@/features/platform/school-unit-type'
 import { userRoleRoutes } from '@/features/platform/user-role'
+import { profileRoutes } from '@/features/platform/profile'
 
 const HOME = '/dashboard'
 
@@ -37,6 +38,7 @@ const router = createRouter({
         ...schoolUnitTypeRoutes,
         ...religionRoutes,
         ...bloodTypeRoutes,
+        ...profileRoutes,
       ],
     },
     {

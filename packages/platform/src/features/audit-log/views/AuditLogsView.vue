@@ -199,18 +199,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-4 md:p-6 lg:p-8">
+  <div class="px-4 pb-4 pt-1 sm:px-6 sm:pb-6 sm:pt-2">
     <Card
       gap="none"
-      class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
+      class="overflow-visible rounded-none border-0 bg-transparent shadow-none ring-0"
     >
-      <CardHeader standard>
+      <CardHeader
+        standard
+        class="min-h-0 border-b-0 bg-transparent px-0 pt-0 pb-3 sm:px-0"
+      >
         <div>
           <CardTitle size="lg"> Log Aktivitas Sistem </CardTitle>
         </div>
       </CardHeader>
 
-      <CardContent variant="standard">
+      <CardContent class="p-0 sm:px-0">
         <div class="flex flex-col md:flex-row gap-4 items-end mb-6">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 w-full">
             <div class="space-y-1.5">
@@ -230,7 +233,7 @@ onMounted(() => {
               <Input
                 v-model="filters.resource"
                 placeholder="Contoh: students, roles"
-                class="h-9 text-sm"
+                class="text-[length:var(--text-control,0.75rem)]"
               />
             </div>
             <div class="space-y-1.5">
@@ -240,13 +243,13 @@ onMounted(() => {
               <Input
                 v-model="filters.action"
                 placeholder="Contoh: create, update"
-                class="h-9 text-sm"
+                class="text-[length:var(--text-control,0.75rem)]"
               />
             </div>
           </div>
           <Button
             variant="outline"
-            class="h-9 gap-1.5 w-full md:w-auto"
+            class="gap-1.5 w-full md:w-auto"
             @click="resetFilters"
           >
             <RotateCcw class="size-3.5" />

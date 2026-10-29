@@ -135,7 +135,7 @@ function confirmSave() {
         <div class="lg:col-span-1">
           <Card
             gap="none"
-            class="overflow-hidden rounded-2xl shadow-sm shadow-black/5 ring-1 ring-black/4"
+            class="overflow-hidden"
           >
             <CardHeader standard>
               <CardTitle size="md">Detail Role</CardTitle>
